@@ -241,11 +241,13 @@ func TestResolveNamespace(t *testing.T) {
 
 func newTestReconciler() *TrainerReconciler {
 	return &TrainerReconciler{
-		Client:          k8sClient,
-		Scheme:          k8sClient.Scheme(),
-		ManifestsPath:   testManifestsPath,
-		DynamicClient:   dynamicClient,
-		DiscoveryClient: discoveryClient,
+		Client:           k8sClient,
+		Scheme:           k8sClient.Scheme(),
+		ManifestsPath:    testManifestsPath,
+		ImageStreamsPath: testImageStreamsPath,
+		WorkDir:          testWorkDir,
+		DynamicClient:    dynamicClient,
+		DiscoveryClient:  discoveryClient,
 	}
 }
 
